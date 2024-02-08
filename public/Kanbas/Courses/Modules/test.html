@@ -1,0 +1,81 @@
+<!-- <style>
+    .container{
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-gap: 5px;
+    }
+    .box{
+        padding: 20px;
+        border-radius: 5px;
+        background: brown;
+        color: #fff;
+        font-size: 150%;
+    }
+    .a{
+        grid-column: 1;
+        grid-row: 1 / 4;
+        height: 100%;
+    }
+    .b{
+        grid-column: 2 /5;
+        grid-row: 2;
+      
+    }
+   
+    .c{
+        grid-column: 2;
+        grid-row: 3;
+        height: 100%;
+    }
+    .d{
+        grid-column: 3;
+        grid-row: 3;
+        height: 100%;
+    }
+    .e{
+        grid-column: 4;
+        grid-row: 3;
+        height: 100%;
+    }
+
+</style>
+<div class="container">
+    <div class="box a">A</div>
+    <div class="box b">B</div>
+    <div class="box c">C</div>
+    <div class="box d">D</div>
+    <div class="box e d-none d-xl-block">E</div>
+</div> -->
+
+<link href="/libs/bootstrap/bootstrap.min.css" rel="stylesheet" />
+<div class="d-flex flex-row">
+    <div class="flex-column" style="background-color: red;">col 1</div>
+    <div class="d-flex flex-column"> 
+        <div class="flex-row" style="background-color: yellow;"> row 1</div>
+        <div class="d-flex flex-row">
+            <div class="flex-column" style="background-color: blue;"> col 2</div>
+            <div class="flex-column" style="background-color: green;"> col 3</div>
+            <div class="flex-column" style="background-color: gray;"> col 4</div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<div class="d-flex flex-row">
+    <div class="flex-column d-none d-md-block">kanbas nav</div>
+    <div class="d-flex flex-column" style="flex:auto">
+      <div class="flex-row d-none d-md-flex align-items-center">
+        breadcrumb
+      </div>
+      <div class="d-flex flex-row">
+        <div class="flex-column d-none d-md-block"> 
+          course nav
+        </div>
+        <div class="flex-column flex-fill">
+          edit
+        </div>
+      </div>
+    </div>
+  </div>

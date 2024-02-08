@@ -1,0 +1,30 @@
+.wd-status li a{
+    text-decoration: none;
+
+}
+.btn-pub {
+    width: 125px;
+    height: 30px;
+    margin-bottom: 20px;
+}
+.bottons {
+    margin-bottom: 5px;
+    width: 250px;
+    height: 30px;
+    text-align: left;
+}
+.todo {
+    text-decoration: none;
+    color: red;
+    text-decoration: none;
+}
+.todo-descrption {
+    font-size: 12;
+    color: lightgray;
+
+}
+.vc {
+    text-decoration: none;
+    color: red;
+    font-size: 12px;
+}

@@ -1,0 +1,40 @@
+.hm-kanbas-navigation {
+    background-color: white;
+    list-style: none;
+    padding: 0px;  
+    margin: 0px;
+    width: 80px;
+    min-height: 100%;
+    /* position: fixed; */
+  }
+  .hm-kanbas-navigation li {
+    padding: 10px;    
+    margin-bottom: 10px;
+    font-size: 0.8em;  
+    text-align: center;
+  }
+  .hm-kanbas-navigation li.wd-active {
+    background-color: white;
+  }
+  .hm-kanbas-navigation li.wd-active a {
+    color: red;
+  }
+  .hm-kanbas-navigation a {
+    color: red;
+    text-decoration: none;
+    margin-bottom: 5px;
+    display: flex; align-items: center;
+  }
+  .hm-kanbas-navigation a i {
+    color: red;
+    font-size: 2em;
+    margin-bottom: 5px;
+    margin-right: 15px;
+    display: block;
+  }
+
+.hm-kanbas-navigation li a img.icon-img {
+    width: 100%; 
+    height: auto; 
+    display: block; 
+}

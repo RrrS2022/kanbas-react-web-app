@@ -1,42 +1,151 @@
 <html>
-    <head></head>
+    <head>
+        <link rel="stylesheet" href="/libs/bootstrap/bootstrap.min.css" />
+        <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.css" />
+        <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css" />
+    </head>
     <body>
-        <select>
-            <option>SpeedGrader</option>
-        </select>
+        <div class="row">
+            <div class="col">
+                <span class="float-end">
+                    <span style="color: green; margin-right: 10px;">
+                        <i class="fa fa-check-circle text-success"></i>
+                        Published
+                    </span>
+                    <button class="top-buttons"><i class="fa fa-ellipsis-v ms-2"></i></button>
+                </span>
+            </div>
+        </div>
         <hr />
-        <h2>Assignment Name</h2>
-        <input value="A1 - ENV + HTML" />
-        <br />
-        <br />
-        <textarea>This is the assignment description.</textarea>
-        <br />
-        <br />
-        <label for="points">Points</label><br />
-        <input id="points" value="100" />
-        <br />
-        <br />
-        <label>Assignment Group</label><br />
-        <select>
-            <option>ASSIGNMENT</option>
-            <option>QUIZ</option>
-            <option>EXAM</option>
-            <option>PROJECT</option>
-        </select>
-        <br />
-        <br />
-        <label>Display Grade as</label><br />
-        <select>
-            <option>Percentage</option>
-        </select>
-        <br />
-        <br />
-        <label>Submission Type</label><br />
-        <select>
-            <option>Online</option>
-        </select>
-        <br />
-        <br />
+
+    
+        <div class="mb-3">
+            <label for="input1"
+                   class="form-label">
+              Assignment Name</label>
+            <input type="text"
+                   class="form-control"
+                   id="input1"
+                   placeholder="A1 + HTML">
+        </div>
+        <div class="mb-3">
+            <textarea class="form-control"
+                        placeholder="This should be description of the assignment."
+                      rows="3"></textarea>
+        </div>
+
+        <div class="container">
+            <div class="mb-3 row justify-content-centered">
+                <label for="points"
+                       class="col-sm-3 col-form-label"
+                       style="padding-left: 200px; padding-right: 50px;">
+                  Points
+                </label>
+                <div class="col-sm-7">
+                  <input type="number"
+                         class="form-control"
+                         id="points">
+                </div>
+            </div>
+            <div class="mb-3 row justify-content-centered">
+                <label for="group" class="col-sm-4 col-form-label "
+                style="padding-left: 50px; padding-right: 50px;">
+                    Assignment Group
+                </label>
+                <select id="group" class="form-select col-sm-8" style="width: 400px; margin-left: 20px;">
+                    <option selected>ASSIGNMENT</option>
+                    <option value="quiz">QUIZ</option>
+                    <option value="exam">EXAM</option>
+                    <option value="project">PROJECT</option>
+                </select>
+            </div>
+            <div class="mb-3 row justify-content-centered">
+                <label for="display_grade-as" class="col-sm-4 col-form-label "
+                style="padding-left: 50px; padding-right: 50px;">
+                    Display Grade as
+                </label>
+                <select id="display_grade-as" class="form-select col-sm-8" style="width: 400px; margin-left: 20px;">
+                    <option selected>Percentage</option>
+        
+                </select>
+            </div>
+            <div class="mb-3 row justify-content-centered">
+                <label for="submission_type" class="col-sm-4 col-form-label "
+                style="padding-left: 50px; padding-right: 50px;">
+                    Submission Type
+                </label>
+                <select id="submission_type" class="form-select col-sm-8" style="width: 400px; margin-left: 20px;">
+                    <option selected>Online</option>
+        
+                </select>
+            </div>
+            <div class="row mb-3">
+                <div class="col-sm-8 offset-sm-4">
+                  <div class="form-check">
+                    <input class="form-check-input"
+                           type="checkbox" id="r6"/>
+                      <label class="form-check-label" for="r6">
+                        Do not count this assignment towards the final grade</label>
+                  </div>
+                </div>
+            </div>       
+        </div>
+        <hr />
+        <div class="d-flex">
+            <div>
+                <label class="col-sm-3 col-form-label"
+                style="padding-left: 200px; padding-right: 50px;">Assign</label>
+            </div>
+            <div class="container" style="border: 1px solid lightgray;">
+                <div class="mb-3">
+                    <label for="assign_to"
+                           class="form-label">
+                      <h4>Assign to</h4></label>
+                    <input 
+                           class="form-control"
+                           id="assign_to"
+                           placeholder="Everyone">
+                </div>
+                <div class="mb-3">
+                    <label for="due"
+                           class="form-label">
+                      <h4>Due</h4></label>
+                    <input type="date"
+                           class="form-control"
+                           id="due" >
+                </div>
+                <div class="mb-3 row">
+                    <div class="col">
+                        <h4>Available from</h4>
+                        <input type="date" class="form-control"  >
+                    </div>
+                    <div class="col">
+                        <h4>Until</h4>
+                        <input type="date" class="form-control">
+                    </div>
+                </div>
+                <div class="row" style="padding-bottom: 15px; padding-top: 10px; background-color: #F5F5F5;">
+                    <div class="col text-center" >
+                        <i class="fa fa-plus" aria-hidden="true"></i>Add
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+        <hr />
+        <span class="float-end">
+            <a href="/Kanbas/Courses/Assignments/screen.html" class="btn btn-light active" role="button">
+                Cancel
+              </a>
+              <a href="/Kanbas/Courses/Assignments/screen.html" class="btn btn-danger active" role="button">
+                Save
+              </a>
+        </span>
+        
+
+<!-- 
+    
         <label>Online Entry Options</label><br />
         <label>
         <input type="checkbox" name="online-entry-options" />Text Entry</label><br />
@@ -64,29 +173,14 @@
         <input type="checkbox" name="peer-reviews" />Web URL<br />
         <br />
         <br />
-        <label>Assign</label><br />
-        <label>Assign to</label><br />
-        <input value="Everyone" />
-        <br />
-        <br />
-        <label>Due</label><br />
-        <input type="date" value="2021-01-01" />
-        <br />
-        <br />
-        <label>Available from</label><br />
-        <input type="date" value="2021-01-01" />
-        <br />
-        <br />
-        <label>Until</label><br />
-        <input type="date" value="2021-01-01" />
-        <br /><br />
+        
         <a href="/Kanbas/Courses/Assignments/screen.html">
             <button>Cancel</button>
         </a>
         <a href="/Kanbas/Courses/Assignments/screen.html">
             <button>Save</button>
         </a>
-        
+         -->
 
     </body>
 </html>

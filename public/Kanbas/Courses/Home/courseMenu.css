@@ -1,0 +1,30 @@
+.cm-navigation {
+    background-color: white;
+    list-style: none;
+    padding: 0px;
+    width: 125px;
+    margin: 0px;
+    margin-left: 20px;
+}
+.cm-navigation li {
+
+    margin-bottom: 10px;
+}
+.cm-navigation li.wd-active {
+    border-left: 2px solid black;
+}
+.cm-navigation li.wd-active a {
+    color: black;
+}
+.cm-navigation a {
+    color: red;
+    text-decoration: none;
+}
+.cm-navigation li a {
+    display: flex;
+    align-items: center;
+  }
+.cm-navigation li a i {
+    margin-right: 10px;
+    
+}
