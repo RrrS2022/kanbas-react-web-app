@@ -5,22 +5,22 @@ function KanbasNavigation() {
   const links = [
     
     { label: "Account",   icon: <FaRegUserCircle className="fs-2" />  },
-    { label: "Dashboard", icon: <FaTachometerAlt className="fs-2" />  },
-    { label: "Courses",   icon: <FaBook className="fs-2" />           },
-    { label: "Calendar",  icon: <FaRegCalendarAlt className="fs-2" /> },
-    { label: "Inbox",   icon: <FaInbox className="fs-2" />           },
-    { label: "History",   icon: <FaClock className="fs-2" />           },
-    { label: "Studio",   icon: <FaDesktop className="fs-2" />           },
-    { label: "Commons",   icon: <FaShareAltSquare className="fs-2" />           },
-    { label: "Help",   icon: <FaQuestionCircle className="fs-2" /> , belowText: true},
+    { label: "Dashboard", icon: <FaTachometerAlt className="fs-2 icon-red" />  },
+    { label: "Courses",   icon: <FaBook className="fs-2 icon-red" />           },
+    { label: "Calendar",  icon: <FaRegCalendarAlt className="fs-2 icon-red" /> },
+    { label: "Inbox",   icon: <FaInbox className="fs-2 icon-red" />           },
+    { label: "History",   icon: <FaClock className="fs-2 icon-red" />           },
+    { label: "Studio",   icon: <FaDesktop className="fs-2 icon-red" />           },
+    { label: "Commons",   icon: <FaShareAltSquare className="fs-2 icon-red" />           },
+    { label: "Help",   icon: <FaQuestionCircle className="fs-2 icon-red" /> , belowText: true},
   ];
   const { pathname } = useLocation();
   return (
     <ul className="wd-kanbas-navigation">
       <li>
-        <a href="http://northeastern.edu" className="icon-container">
+        <Link to="http://northeastern.edu" className="icon-container">
           <img src="/images/northeastern_icon.jpg" alt="Northeastern Icon" className="icon-img" />
-        </a>
+        </Link>
         </li>
       {links.map((link, index) => (
         <li key={index} className={pathname.includes(link.label) ? 'wd-active' : ''}>
