@@ -1,33 +1,44 @@
 import { assignments, enrollments, grades, users } from "../../Database";
 import { Link, useParams } from "react-router-dom";
-import { FaCog, FaSignInAlt, FaSignOutAlt, FaFilter } from 'react-icons/fa';
+import { FaCog, FaSignInAlt, FaSignOutAlt, FaFilter, FaCaretDown} from 'react-icons/fa';
+
 
 function Grades() {
   const { courseId } = useParams();
   const as = assignments.filter((assignment) => assignment.course === courseId);
   const es = enrollments.filter((enrollment) => enrollment.course === courseId);
+  const iconStyle = { color: 'red' };
   return (
     <div>
-      <div className="d-flex flex-row-reverse bd-highlight">
-        <div className="p-2 bd-highlight">
-          <Link to="#" className="btn btn-light" style={{ height: 35 }}>
-            <FaCog />
-          </Link>
+      <div className="d-flex justify-content-between">
+          <div className="d-flex align-items-center">
+            <h3 className="mb-0 me-2" style={{ color: 'red' }}>Gradebooks</h3>
+            <FaCaretDown style={iconStyle} />
+          </div>
+          <div className="d-flex">
+            <div className="p-2 bd-highlight">
+              <Link to="#" className="btn btn-light">
+                <FaSignInAlt />
+                Import
+              </Link>
+            </div>
+            <div className="p-2 bd-highlight">
+              <Link to="#" className="btn btn-light">
+                <FaSignOutAlt />
+                Export
+                <i className="fa fa-caret-down" aria-hidden="true"></i>
+              </Link>
+            </div>
+            <div className="p-2 bd-highlight">
+              <Link to="#" className="btn btn-light" style={{ height: 35 }}>
+                <FaCog />
+              </Link>
+            </div>
+
+           
+          </div>
         </div>
-        <div className="p-2 bd-highlight">
-          <Link to="#" className="btn btn-light">
-            <FaSignOutAlt />
-            Export
-            <i className="fa fa-caret-down" aria-hidden="true"></i>
-          </Link>
-        </div>
-        <div className="p-2 bd-highlight">
-          <Link to="#" className="btn btn-light">
-            <FaSignInAlt />
-            Import
-          </Link>
-        </div>
-      </div>
+
       <div className="mb-3 row">
           <div className="col">
             <h5>Student Names</h5>
