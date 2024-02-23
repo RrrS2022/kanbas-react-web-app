@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { courses } from "../Database";
 function Dashboard() {
   return (
-    <div className="p-4">
+    <div className="p-4" style={{ height: "100vh" }}>
       <h1>Dashboard</h1>             
       <hr />
       <h2>Published Courses (12)</h2> <hr />
