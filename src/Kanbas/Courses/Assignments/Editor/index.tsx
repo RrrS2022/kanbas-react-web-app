@@ -1,16 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import { assignments } from "../../../Database";
 import { FaEllipsisV, FaCheckCircle } from "react-icons/fa";
+import { addAssignment, updateAssignment } from "../assignmentsReducer";
+import { KanbasState } from "../../../store";
+
+
 function AssignmentEditor() {
   const { assignmentId } = useParams();
-  const assignment = assignments.find(
-    (assignment) => assignment._id === assignmentId);
+  const assignmentList = useSelector((state: KanbasState) => 
+    state.assignmentsReducer.assignments);
+  const assignment = useSelector((state: KanbasState) => 
+    state.assignmentsReducer.assignment);
+  const existAssignment = assignmentList.find((a) => a._id === assignmentId);
   const { courseId } = useParams();
+  const [title, setTitle] = useState("");
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const handleTitleChange = (e:any) => {
+    setTitle(e.target.value);
+  };
   const handleSave = () => {
-    console.log("Actually saving assignment TBD in later assignments");
+    if (existAssignment) {
+      dispatch(updateAssignment({_id: assignmentId, title}));
+    } else {
+      dispatch(addAssignment({_id: assignmentId, title}));
+    }
     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
+    
   };
   return (
     <div className="container-fluid">
@@ -28,8 +46,9 @@ function AssignmentEditor() {
         <hr />
 
         <h2>Assignment Name</h2>
-        <input value={assignment?.title}
-                className="form-control mb-2" />
+        <input value={title}
+                className="form-control mb-2" 
+                onChange={handleTitleChange}/>
         <div className="mb-3">
             <textarea 
             className="form-control"
